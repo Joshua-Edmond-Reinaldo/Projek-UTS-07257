@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeacherTrack | Desain Web Absensi Guru</title>
+    <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        body { background-color: #f8f9fa; }
+        .fade-in { opacity: 0; animation: fadeIn 1s ease-in-out forwards; }
+        @keyframes fadeIn { to { opacity: 1; } }
+        .card:hover { transform: translateY(-5px); transition: transform 0.3s ease; }
+        .btn-custom { background: linear-gradient(45deg, #007bff, #0056b3); border: none; }
+        .btn-custom:hover { background: linear-gradient(45deg, #0056b3, #004085); }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">TeacherTrack Detail</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html#portofolio">Portofolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#kontak">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow-lg border-0 fade-in">
+                    <div class="card-body p-5">
+                        <h1 class="card-title display-4 fw-bold text-primary mb-3">TeacherTrack: Desain Web Absensi Guru</h1>
+                        <p class="lead text-muted mb-4"><i class="fas fa-chalkboard-teacher me-2"></i>Proyek Sederhana: Frontend Saja</p>
+
+                        <div class="text-center mb-4">
+                            <img src="asset/Desain Web Absensi Kelas.jpg" alt="Screenshot TeacherTrack" class="img-fluid rounded shadow" data-bs-toggle="modal" data-bs-target="#imageModal" style="cursor: pointer;">
+                        </div>
+
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                        <i class="fas fa-info-circle me-2"></i>Deskripsi Singkat
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        TeacherTrack adalah perancangan UI/UX untuk <em>dashboard</em> admin yang bertujuan memantau kehadiran guru secara efisien. Proyek ini berfokus pada visualisasi data yang baik (menggunakan grafik dan tabel) dan tata letak yang mudah dipahami oleh pengguna. Tujuannya adalah menciptakan pengalaman admin yang lancar dan intuitif untuk manajemen kehadiran guru.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                        <i class="fas fa-star me-2"></i>Fitur Utama
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <ul class="list-unstyled">
+                                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Dashboard dengan grafik kehadiran guru real-time.</li>
+                                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Tabel data guru dengan filter berdasarkan mata pelajaran.</li>
+                                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Antarmuka responsif untuk desktop dan mobile.</li>
+                                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Laporan kehadiran bulanan dan tahunan.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                        <i class="fas fa-cogs me-2"></i>Teknologi Yang Digunakan
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <div class="row">
+                                            <div class="col-md-4 mb-3">
+                                                <div class="badge bg-primary p-2 w-100"><i class="fab fa-html5 me-1"></i>HTML 5</div>
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <div class="badge bg-info p-2 w-100"><i class="fab fa-css3 me-1"></i>Bootstrap CSS</div>
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <div class="badge bg-warning p-2 w-100"><i class="fab fa-js me-1"></i>JavaScript</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-4">
+                            <a href="index.html#portofolio" class="btn btn-custom btn-lg me-3"><i class="fas fa-arrow-left me-2"></i>Kembali ke Portofolio</a>
+                            <button class="btn btn-outline-primary btn-lg" data-bs-toggle="tooltip" title="Hubungi untuk detail lebih lanjut"><i class="fas fa-envelope me-2"></i>Kontak</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal for Image -->
+    <div class="modal fade" id="imageModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Screenshot TeacherTrack</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="asset/Desain Web Absensi Kelas.jpg" alt="Screenshot TeacherTrack" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-primary text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 Joshua Edmond R. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="Bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Initialize tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+
+        // Fade-in animation on scroll
+        window.addEventListener('scroll', function() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    el.style.animationPlayState = 'running';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

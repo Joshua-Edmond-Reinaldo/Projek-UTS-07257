@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promo Portfolio - Joshua Edmond Reinaldo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="atur1.js"></script>
+  <style>
+    :root {
+      --primary-color: #6366f1;
+      --secondary-color: #8b5cf6;
+      --accent-color: #f59e0b;
+      --dark-color: #1f2937;
+      --light-color: #f9fafb;
+      --gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+      line-height: 1.6;
+      color: var(--dark-color);
+      background: var(--light-color);
+    }
+
+    .navbar {
+      background: rgba(255, 255, 255, 0.95) !important;
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+    }
+
+    .navbar-brand {
+      color: var(--primary-color) !important;
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+
+    .nav-link {
+      color: var(--dark-color) !important;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .nav-link:hover {
+      color: var(--primary-color) !important;
+      transform: translateY(-2px);
+    }
+
+    .promo-hero {
+      background: var(--gradient);
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .promo-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+      z-index: 1;
+    }
+
+    .promo-hero .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .promo-title {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      background: linear-gradient(45deg, #ffffff, #e0e7ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+    }
+
+    .promo-subtitle {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      font-weight: 300;
+      opacity: 0.9;
+      margin-bottom: 1.5rem;
+    }
+
+    .promo-text {
+      font-size: 1.1rem;
+      opacity: 0.8;
+      margin-bottom: 2rem;
+    }
+
+    .promo-card {
+      background: white;
+      border: none;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: var(--transition);
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      margin-bottom: 2rem;
+    }
+
+    .promo-card:hover {
+      transform: translateY(-15px) scale(1.02);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .promo-card img {
+      transition: var(--transition);
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .promo-card:hover img {
+      transform: scale(1.1);
+    }
+
+    .promo-card .card-body {
+      padding: 1.5rem;
+    }
+
+    .promo-card .card-title {
+      color: var(--primary-color);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .promo-card .card-text {
+      color: #6b7280;
+      margin-bottom: 1rem;
+    }
+
+    .promo-card .btn {
+      background: var(--gradient);
+      border: none;
+      border-radius: 25px;
+      padding: 8px 20px;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .promo-card .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 3rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--gradient);
+      border-radius: 2px;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    footer {
+      background: var(--dark-color);
+      color: white;
+      padding: 2rem 0;
+    }
+
+    .footer-link {
+      color: #9ca3af;
+      transition: var(--transition);
+    }
+
+    .footer-link:hover {
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .promo-hero {
+        text-align: center;
+        padding: 2rem 0;
+      }
+
+      .promo-card {
+        margin-bottom: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <header class="sticky-top bg-dark shadow-lg">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand fw-bold fs-3 text-white" href="index.html">Josh</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link text-white fs-5" href="index.html#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white fs-5" href="index.html#profil">Profil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white fs-5" href="index.html#portofolio">Portofolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white fs-5" href="FAQ.html">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white fs-5 active" href="Promo.html">Promo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white fs-5" href="index.html#kontak">Kontak</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="promo-hero fade-in">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h1 class="promo-title">
+            Promo Spesial Portfolio!
+          </h1>
+          <p class="promo-subtitle">
+            Dapatkan Diskon Menarik untuk Layanan Web Development
+          </p>
+          <p class="promo-text">
+            Manfaatkan penawaran spesial ini untuk mengembangkan website impian Anda dengan kualitas terbaik dan harga terjangkau. 🎉
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Promo Section -->
+  <section class="py-5 bg-light fade-in">
+    <div class="container">
+      <h2 class="section-title">Penawaran Spesial</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card promo-card">
+            <img src="asset/Desain Web Absensi Kelas.jpg" class="card-img-top" alt="Website Development">
+            <div class="card-body">
+              <h5 class="card-title">Diskon 30% Website Responsive</h5>
+              <p class="card-text">Pengembangan website modern dengan desain responsif dan performa optimal.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="text-muted text-decoration-line-through">Rp 5.000.000</span>
+                <span class="fw-bold text-success">Rp 3.500.000</span>
+              </div>
+              <a href="index.html#kontak" class="btn mt-2">Hubungi Saya</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card promo-card">
+            <img src="asset/APK To-do List.jpg" class="card-img-top" alt="Web App Development">
+            <div class="card-body">
+              <h5 class="card-title">Diskon 25% Aplikasi Web</h5>
+              <p class="card-text">Pengembangan aplikasi web interaktif dengan fitur lengkap dan user-friendly.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="text-muted text-decoration-line-through">Rp 8.000.000</span>
+                <span class="fw-bold text-success">Rp 6.000.000</span>
+              </div>
+              <a href="index.html#kontak" class="btn mt-2">Hubungi Saya</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card promo-card">
+            <img src="asset/Desain Web Penjualan Komputer.png" class="card-img-top" alt="E-commerce Website">
+            <div class="card-body">
+              <h5 class="card-title">Diskon 20% Website E-commerce</h5>
+              <p class="card-text">Website penjualan online lengkap dengan sistem pembayaran dan manajemen produk.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="text-muted text-decoration-line-through">Rp 10.000.000</span>
+                <span class="fw-bold text-success">Rp 8.000.000</span>
+              </div>
+              <a href="index.html#kontak" class="btn mt-2">Hubungi Saya</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card promo-card">
+            <img src="asset/Desain Web Absensi Kelas.jpg" class="card-img-top" alt="Admin Dashboard">
+            <div class="card-body">
+              <h5 class="card-title">Diskon 35% Dashboard Admin</h5>
+              <p class="card-text">Sistem dashboard administrasi dengan analitik dan manajemen data lengkap.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="text-muted text-decoration-line-through">Rp 6.000.000</span>
+                <span class="fw-bold text-success">Rp 3.900.000</span>
+              </div>
+              <a href="index.html#kontak" class="btn mt-2">Hubungi Saya</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card promo-card">
+            <img src="asset/Desain Web Penjualan Makanan.jpg" class="card-img-top" alt="Landing Page">
+            <div class="card-body">
+              <h5 class="card-title">Diskon 40% Landing Page</h5>
+              <p class="card-text">Halaman landing page yang menarik dengan konversi tinggi dan desain modern.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="text-muted text-decoration-line-through">Rp 2.500.000</span>
+                <span class="fw-bold text-success">Rp 1.500.000</span>
+              </div>
+              <a href="index.html#kontak" class="btn mt-2">Hubungi Saya</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card promo-card">
+            <img src="asset/Desain Web Portofolio.jpg" class="card-img-top" alt="Portfolio Website">
+            <div class="card-body">
+              <h5 class="card-title">Diskon 50% Website Portfolio</h5>
+              <p class="card-text">Website portfolio personal/profesional yang menampilkan karya dan layanan Anda.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="text-muted text-decoration-line-through">Rp 4.000.000</span>
+                <span class="fw-bold text-success">Rp 2.000.000</span>
+              </div>
+              <a href="index.html#kontak" class="btn mt-2">Hubungi Saya</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <p class="mb-0">
+              &copy; 2025 Joshua Edmond Reinaldo. All Rights Reserved. <span id="clock"></span>
+              <br>
+              NIM : A12.2024.07257            
+            </p>
+          </div>
+          <div class="col-md-6 text-end">
+            <div class="d-flex justify-content-end gap-3">
+              <a
+                href="https://www.instagram.com/joshuaedmond89/"
+                target="_blank"
+                class="text-white"
+              >
+                <img src="asset/instagram.png" alt="instagram" class="img-fluid" style="width: 32px; height: 32px;">
+              </a>
+
+              <a
+                href="https://github.com/Joshua-Edmond-Reinaldo"
+                target="_blank"
+                class="text-white"
+              >
+                <img src="asset/Github.png" alt="Github" class="img-fluid" style="width: 32px; height: 32px;">
+              </a>
+
+              <a
+                href="https://discordapp.com/users/1182338420471758930"
+                target="_blank"
+                class="text-white"
+              >
+                <img src="asset/Discord.png" alt="Discord" class="img-fluid" style="width: 32px; height: 32px;">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  <script>
+    // Intersection Observer for fade-in animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all fade-in elements
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
